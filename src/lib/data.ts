@@ -1,7 +1,7 @@
 export const author = {
     name: "ಸೋಮಶೇಖರ ಇಟಗಿ",
     bio: "ಕನ್ನಡ ಸಾಹಿತ್ಯ ಲೋಕದಲ್ಲಿ ಕವನಗಳು, ಕಥೆಗಳು ಮತ್ತು ಲೇಖನಗಳ ಮೂಲಕ ತಮ್ಮದೇ ಆದ ಛಾಪು ಮೂಡಿಸಿರುವ ಲೇಖಕ.",
-    image: "/placeholder-author.jpg",
+    image: "/author.jpg",
 };
 
 export const featuredPoem = {

@@ -1,4 +1,5 @@
 import { author, featuredPoem, recentItems, quotes } from "@/lib/data";
+import Image from "next/image";
 import Link from "next/link";
 // import { ArrowRight } from "lucide-react"; // Import commented out until package is guaranteed installed
 
@@ -8,9 +9,14 @@ export default function Home() {
       {/* Hero Section */}
       <section className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
         <div className="flex flex-col items-center gap-6">
-          <div className="w-48 h-48 bg-neutral-200 dark:bg-neutral-800 rounded-full flex items-center justify-center text-neutral-500 overflow-hidden">
-            {/* <img src={author.image} alt={author.name} className="w-full h-full object-cover" /> */}
-            <span className="text-4xl text-neutral-400">Photo</span>
+          <div className="relative w-48 h-48 bg-neutral-200 dark:bg-neutral-800 rounded-full flex items-center justify-center text-neutral-500 overflow-hidden">
+            <Image
+              src={author.image}
+              alt={author.name}
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
           <h1 className="text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-6xl font-serif">
             {author.name}
