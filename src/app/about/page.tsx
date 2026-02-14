@@ -4,14 +4,10 @@ export default function About() {
     return (
         <div className="mx-auto max-w-3xl px-6 lg:px-8 py-16">
             <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl text-center mb-12">
-                ಲೇಖಕರ ಬಗ್ಗೆ
+                ಸೋಮಶೇಖರ ಇಟಗಿ
             </h1>
 
             <div className="prose prose-neutral dark:prose-invert mx-auto">
-                <p className="lead text-xl text-neutral-600 dark:text-neutral-300">
-                    {author.bio}
-                </p>
-
                 <p>
                     ನಾನು ಬಾಲ್ಯದಿಂದಲೂ ಸಾಹಿತ್ಯದಲ್ಲಿ ಆಸಕ್ತಿ ಹೊಂದಿದ್ದೆ.
                     ಪ್ರಕೃತಿ, ಸಮಾಜ ಮತ್ತು ಮಾನವೀಯ ಮೌಲ್ಯಗಳ ಬಗ್ಗೆ ಬರೆಯಲು ಇಷ್ಟಪಡುತ್ತೇನೆ.

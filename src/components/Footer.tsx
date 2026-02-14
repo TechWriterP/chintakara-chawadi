@@ -8,7 +8,7 @@ export function Footer() {
                 </div>
                 <div className="mt-8 md:order-1 md:mt-0">
                     <p className="text-center text-xs leading-5 text-neutral-500">
-                        &copy; {new Date().getFullYear()} ಕನ್ನಡ ಲೇಖಕ. ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.
+                        &copy; {new Date().getFullYear()} ಸೋಮಶೇಖರ ಇಟಗಿ, ಕನ್ನಡ ಲೇಖಕ. ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.
                     </p>
                 </div>
             </div>
