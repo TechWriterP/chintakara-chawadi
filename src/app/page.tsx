@@ -1,65 +1,102 @@
-import Image from "next/image";
+import { author, featuredPoem, recentItems, quotes } from "@/lib/data";
+import Link from "next/link";
+// import { ArrowRight } from "lucide-react"; // Import commented out until package is guaranteed installed
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="flex flex-col gap-16 py-10">
+      {/* Hero Section */}
+      <section className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+        <div className="flex flex-col items-center gap-6">
+          <div className="w-48 h-48 bg-neutral-200 dark:bg-neutral-800 rounded-full flex items-center justify-center text-neutral-500 overflow-hidden">
+            {/* <img src={author.image} alt={author.name} className="w-full h-full object-cover" /> */}
+            <span className="text-4xl text-neutral-400">Photo</span>
+          </div>
+          <h1 className="text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-6xl font-serif">
+            {author.name}
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-4 text-lg leading-8 text-neutral-600 dark:text-neutral-300 max-w-2xl">
+            {author.bio}
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Featured Poem */}
+      <section className="bg-neutral-50 dark:bg-neutral-800/50 py-16">
+        <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
+          <h2 className="text-sm font-semibold leading-7 text-red-900 dark:text-red-400">ವಿಶೇಷ ಕವನ</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl">
+            {featuredPoem.title}
+          </p>
+          <div className="mt-8 text-xl leading-loose whitespace-pre-line text-neutral-700 dark:text-neutral-300 font-serif">
+            {featuredPoem.content}
+          </div>
+          <div className="mt-10">
+            <Link href={`/poems/${featuredPoem.slug}`} className="text-sm font-semibold leading-6 text-red-900 dark:text-red-400">
+              ಪೂರ್ತಿ ಓದಿ <span aria-hidden="true">→</span>
+            </Link>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Latest Writings */}
+      <section className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl">ಇತ್ತೀಚಿನ ಬರಹಗಳು</h2>
+          <p className="mt-2 text-lg leading-8 text-neutral-600 dark:text-neutral-400">
+            ಕವನ, ಕಥೆ ಮತ್ತು ಲೇಖನಗಳ ಸಂಗ್ರಹ
+          </p>
+        </div>
+        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          {recentItems.map((item) => (
+            <article key={item.slug} className="flex max-w-xl flex-col items-start justify-between border-l-2 border-neutral-100 dark:border-neutral-800 pl-6 hover:border-red-900/50 transition-colors">
+              <div className="flex items-center gap-x-4 text-xs">
+                <time dateTime={item.date} className="text-neutral-500">
+                  {item.date}
+                </time>
+                <span className="relative z-10 rounded-full bg-neutral-100 dark:bg-neutral-800 px-3 py-1.5 font-medium text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200">
+                  {item.type === 'poem' ? 'ಕವನ' : item.type === 'story' ? 'ಕಥೆ' : 'ಲೇಖನ'}
+                </span>
+              </div>
+              <div className="group relative">
+                <h3 className="mt-3 text-lg font-semibold leading-6 text-neutral-900 dark:text-neutral-100 group-hover:text-neutral-600">
+                  <Link href={`/${item.type}s/${item.slug}`}>
+                    <span className="absolute inset-0" />
+                    {item.title}
+                  </Link>
+                </h3>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="mt-10 flex justify-center">
+          <Link href="/poems" className="rounded-md bg-red-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
+            ಎಲ್ಲಾ ಬರಹಗಳನ್ನು ನೋಡಿ
+          </Link>
+        </div>
+      </section>
+
+      {/* Quote Banner */}
+      <section className="bg-neutral-900 text-white py-20 px-6">
+        <div className="mx-auto max-w-4xl text-center">
+          <blockquote className="text-2xl font-serif italic leading-relaxed">
+            &quot;{quotes[0]}&quot;
+          </blockquote>
+        </div>
+      </section>
+
+      {/* Subscribe */}
+      <section className="mx-auto max-w-7xl px-6 lg:px-8 text-center pb-10">
+        <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">ಚಂದಾದಾರರಾಗಿ</h2>
+        <p className="mt-2 text-neutral-600 dark:text-neutral-400">ಹೊಸ ಬರಹಗಳ ಬಗ್ಗೆ ಇಮೇಲ್ ಮೂಲಕ ಮಾಹಿತಿ ಪಡೆಯಿರಿ.</p>
+        <form className="mt-6 flex max-w-md mx-auto gap-x-4">
+          <label htmlFor="email-address" className="sr-only">Email address</label>
+          <input id="email-address" name="email" type="email" autoComplete="email" required className="min-w-0 flex-auto rounded-md border-0 bg-neutral-100/50 dark:bg-neutral-800/50 px-3.5 py-2 text-neutral-900 dark:text-neutral-100 shadow-sm ring-1 ring-inset ring-neutral-300 dark:ring-neutral-700 placeholder:text-neutral-400 focus:ring-2 focus:ring-inset focus:ring-red-900 sm:text-sm sm:leading-6" placeholder="ನಿಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸ" />
+          <button type="submit" className="flex-none rounded-md bg-red-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-900">
+            ಸಲ್ಲಿಸಿ
+          </button>
+        </form>
+      </section>
     </div>
   );
 }
