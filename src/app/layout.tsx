@@ -24,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="kn" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${notoSans.variable} antialiased font-sans bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 flex flex-col min-h-screen`}
       >
         <ThemeProvider
