@@ -12,8 +12,25 @@ const notoSans = Noto_Sans_Kannada({
 });
 
 export const metadata: Metadata = {
-  title: "Kannada Author Website",
-  description: "Showcasing poems, stories, and articles by the author.",
+  metadataBase: new URL("https://TechWriterP.github.io/chintakara-chawadi/"),
+  title: "ಚಿಂತಕರ ಚಾವಡಿ - ಸೋಮಶೇಖರ ಇಟಗಿ",
+  description: "ಕನ್ನಡ ಸಾಹಿತ್ಯ ಲೋಕದಲ್ಲಿ ಕವನಗಳು, ಕಥೆಗಳು ಮತ್ತು ಲೇಖನಗಳ ಸಂಗ್ರಹ. ಸೋಮಶೇಖರ ಇಟಗಿ ಅವರ ಅಧಿಕೃತ ಜಾಲತಾಣ.",
+  openGraph: {
+    title: "ಚಿಂತಕರ ಚಾವಡಿ - ಸೋಮಶೇಖರ ಇಟಗಿ",
+    description: "ಕನ್ನಡ ಕವನಗಳು, ಸುಂದರ ಕಥೆಗಳು ಮತ್ತು ವಿಚಾರಪೂರ್ಣ ಲೇಖನಗಳ ಸಂಗ್ರಹ.",
+    url: "https://TechWriterP.github.io/chintakara-chawadi/",
+    siteName: "ಚಿಂತಕರ ಚಾವಡಿ",
+    locale: "kn_IN",
+    type: "website",
+    images: [
+      {
+        url: "/author.jpg",
+        width: 800,
+        height: 800,
+        alt: "ಸೋಮಶೇಖರ ಇಟಗಿ",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
